@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>야옹</title>
+</head>
+<body style="-webkit-app-region: drag">
+    <div id="app"></div>
+    <script>
+        const script = document.createElement('script')
+        script.defer
+        script.src = `http://localhost:3000/dist/app.dev.js`
+
+        document.getElementsByTagName('body')[0].appendChild(script)
+    </script>
+</body>
+</html>
