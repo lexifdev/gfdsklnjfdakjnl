@@ -12,7 +12,7 @@ export default ({game, ...props}) => {
             setStreamInfo(data)
         }
         fetchStreamInfo()
-    }, [])
+    }, [game])
 
     return (
         <div style={props.style}>
