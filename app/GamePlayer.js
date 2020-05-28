@@ -2,7 +2,7 @@ import React from 'react'
 import HLSPlayer from './HLSPlayer'
 
 
-export default ({game, ...props}) => {
+export default ({game}) => {
     const [streamInfo, setStreamInfo] = React.useState(null)
 
     React.useEffect(() => {
@@ -15,7 +15,7 @@ export default ({game, ...props}) => {
     }, [game])
 
     return (
-        <div style={props.style}>
+        <div>
             {streamInfo && <HLSPlayer url={streamInfo['secUrl']} />}
         </div>
     )

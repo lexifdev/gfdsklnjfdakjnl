@@ -1,6 +1,14 @@
 import React from 'react'
 
 
+const style = {
+    background: 'white',
+    padding: '10px',
+    fontFamily: 'sans-serif',
+    lineHeight: '1.5em',
+}
+
+
 const getLiveBoxList = async () => {
     const response = await fetch(`https://sports.news.naver.com/kbaseball/index.nhn`)
     const text = await response.text()
@@ -26,7 +34,7 @@ export default ({onSelected}) => {
     }, [])
 
     return (
-        <div>
+        <div style={style}>
             {games.length < 1 ?
                 <div>지금은 진행중인 경기가 없어요</div> :
                 games.map((game, i) => (

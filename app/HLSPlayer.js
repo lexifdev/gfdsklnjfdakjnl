@@ -2,6 +2,11 @@ import React from 'react'
 import HLS from 'hls.js'
 
 
+const style = {
+    maxWidth: '100%',
+    maxHeight: '100%'
+}
+
 export default ({url, ...props}) => {
     const video = React.useRef(null)
 
@@ -18,5 +23,5 @@ export default ({url, ...props}) => {
         }
     }, [url])
 
-    return <video ref={video} controls {...props} />
+    return <video ref={video} controls {...props} style={style} />
 }

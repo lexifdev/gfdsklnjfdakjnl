@@ -1,17 +1,8 @@
 import React from 'react'
+import FullScreen from './FullScreen'
+import OverlayMenu from './OverlayMenu'
 import GameList from './GameList'
 import GamePlayer from './GamePlayer'
-
-
-const styles = {
-    list: {
-
-    },
-    player: {
-        width: '600px',
-        height: '400px'
-    }
-}
 
 
 export default () => {
@@ -19,8 +10,12 @@ export default () => {
 
     return (
         <div>
-            <GameList onSelected={game => setGame(game)} style={styles.list} />
-            <GamePlayer game={game} style={styles.player} />
+            <OverlayMenu>
+                <GameList onSelected={game => setGame(game)} />
+            </OverlayMenu>
+            <FullScreen>
+                <GamePlayer game={game} />
+            </FullScreen>
         </div>
     )
 }
