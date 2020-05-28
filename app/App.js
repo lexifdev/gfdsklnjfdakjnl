@@ -1,8 +1,8 @@
 import React from 'react'
-import FullScreen from './FullScreen'
-import OverlayMenu from './OverlayMenu'
-import GameList from './GameList'
-import GamePlayer from './GamePlayer'
+import FullScreen from 'components/FullScreen'
+import OverlayMenu from 'components/OverlayMenu'
+import GameList from 'components/GameList'
+import GamePlayer from 'components/GamePlayer'
 
 
 export default () => {
