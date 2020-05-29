@@ -7,11 +7,20 @@
 <body style="-webkit-app-region: drag">
     <div id="app"></div>
     <script>
-        const script = document.createElement('script')
-        script.defer
-        script.src = `http://localhost:3000/dist/app.dev.js`
+        const scripts = []
 
-        document.getElementsByTagName('body')[0].appendChild(script)
+        if (process.env.NODE_ENV === 'production') {
+            scripts.push(`./build/app.prod.js`)
+        } else {
+            scripts.push(`http://localhost:3000/dist/app.dev.js`)
+        }
+    </script>
+    <script>
+        for (const src of scripts) {
+            const script = document.createElement('script')
+            script.src = src
+            document.getElementsByTagName('body')[0].appendChild(script)
+        }
     </script>
 </body>
 </html>

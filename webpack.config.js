@@ -12,6 +12,7 @@ const DEV_ENTRY = [
 ]
 
 const config = {
+
     entry: [require.resolve(`./app/index.js`)],
     module: {
         rules: [{
@@ -62,13 +63,21 @@ if (MODE === `development`) {
 
     config.output = {
         publicPath: `http://localhost:${PORT}/dist/`,
-        filename: 'app.dev.js'
+        filename: `app.dev.js`
     }
+
     config.devServer = {
         port: PORT,
         hot: true
     }
 } else {
+    config.mode = `production`
+
+    config.output = {
+        path: path.join(__dirname, `build`),
+        filename: `app.prod.js`
+    }
+
     config.plugins = [
         ...config.plugins,
         new webpack.EnvironmentPlugin({

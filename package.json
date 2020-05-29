@@ -1,8 +1,12 @@
 {
+  "name": "bbcat",
+  "version": "0.1.1",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "develop": "webpack-dev-server --config webpack.config.js"
+    "start": "NODE_ENV=production electron .",
+    "build": "NODE_ENV=production webpack --production",
+    "dev-main": "electron .",
+    "dev-renderer": "webpack-dev-server --config webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
