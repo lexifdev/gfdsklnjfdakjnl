@@ -39,7 +39,7 @@ const Pane = ({children, opened}) => {
 
 
 export default ({children}) => {
-    const [opened, setOpened] = React.useState(false)
+    const [opened, setOpened] = React.useState(true)
 
     return (
         <div style={styles.wrapper}>
