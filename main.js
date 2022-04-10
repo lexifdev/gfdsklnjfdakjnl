@@ -2,12 +2,13 @@ const { app, BrowserWindow } = require('electron')
 
 
 function createWindow () {
-    let window = new BrowserWindow({
+    const window = new BrowserWindow({
         width: 800,
         height: 600,
         titleBarStyle: 'customButtonsOnHover',
         webPreferences: {
             nodeIntegration: true,
+            contextIsolation: false,
             webSecurity: false
         }
     })
